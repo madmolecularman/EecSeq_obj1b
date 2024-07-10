@@ -1,0 +1,38 @@
+---
+title: "indiv_violin_plot"
+author: "Jacob Green"
+date: '2023-11-09'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(root.dir = "/home/jgreen/eager_obj1a/02_ddocent/03_mergedPESE")
+```
+
+```{r bam_aligned reads file and summarize data}
+data <- read.csv("/home/jgreen/eager_obj1a/02_ddocent/03_mergedPESE/bamalignedread.csv")
+
+# Split the Sample column into Capture and Sample
+data <- data %>%
+  separate(Sample, into = c("Capture", "Sample"), sep = "_")
+
+data$Capture <- as.factor(data$Capture)
+
+p <- ggplot(data, aes(x=Capture, y=Reads, color = Capture))+
+  geom_violin(trim=FALSE)+
+  #geom_boxplot(width=0.1)+
+  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.5)+
+  labs(title="Unequal distribution of aligned reads across captures")+
+  theme_bw()
+
+p
+
+save_path <- "/home/jgreen/eager_obj1a/02_ddocent/03_mergedPESE/"
+ggsave(filename = paste0(save_path, "violin_plot_readvalues.png"), plot = p, width = 12, height = 8)
+
+#p + stat_summary(fun.y=mean, geom)
+
+# Summary statistics
+summary <- summary(data)
+summary
+```
