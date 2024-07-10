@@ -1,0 +1,2 @@
+ANOVA p-value for g1 across captures: 0.9423713 
+

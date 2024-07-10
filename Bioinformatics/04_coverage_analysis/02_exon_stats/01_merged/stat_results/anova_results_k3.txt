@@ -1,0 +1,2 @@
+ANOVA p-value for k3 across captures: 0.9073927 
+

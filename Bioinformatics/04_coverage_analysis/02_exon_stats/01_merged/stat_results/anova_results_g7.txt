@@ -1,0 +1,2 @@
+ANOVA p-value for g7 across captures: 0.9192105 
+

@@ -1,0 +1,2 @@
+ANOVA p-value for b1 across captures: 0.5461289 
+

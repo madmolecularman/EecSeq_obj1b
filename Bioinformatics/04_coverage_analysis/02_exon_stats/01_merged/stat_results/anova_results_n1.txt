@@ -1,0 +1,2 @@
+ANOVA p-value for n1 across captures: 0.9015954 
+

@@ -1,0 +1,2 @@
+ANOVA p-value for b2 across captures: 0.7387751 
+

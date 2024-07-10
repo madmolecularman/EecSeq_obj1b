@@ -1,0 +1,2 @@
+ANOVA p-value for k1 across captures: 0.7085978 
+
